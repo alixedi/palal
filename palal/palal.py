@@ -86,6 +86,9 @@ def vector_distance(v, _v):
             dist = dist + dd**2
     return dist
 
+def dget(d, k):
+    return d[k] if k in d else ''
+
 
 def main():
     # load everything
@@ -118,10 +121,10 @@ def main():
     for i, sd in enumerate(sdists[:3]):
         lic, dist = sd
         data, txt = lics[lic]
-        print1('%d) %s [dist=%s]' % (i+1, data['title'], d))
-        print1(data['description'])
-        print1(data['how'])
-        print1(data['source']) if 'source' in data else print1('No source.')
+        print1('%d) %s [dist=%s]' % (i+1, dget(data, 'title'), d))
+        print1(dget(data, 'description'))
+        print1(dget(data, 'how'))
+        print1(dget(data, 'source'))
 
 if __name__ == '__main__':
     main()
