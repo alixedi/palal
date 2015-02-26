@@ -61,11 +61,9 @@ def get_choice(rule):
     return get_choice(rule)
 
 
-def get_choice_vector(rule):
+def get_choice_vector(rules):
     """Ask questions get choices."""
-    text = 'What should be %s by your license?' % rule 
-    print2(text)
-    return dict(map(get_choice, rule))
+    return dict(map(get_choice, rules))
 
 
 def get_license_vector(lic):
@@ -99,6 +97,8 @@ def main():
 
     # get user choices
     for rule in rules:
+        text = 'What should be %s by your license?' % rule 
+        print2(text)
         ch_vectors[rule] = get_choice_vector(rules[rule])
 
     # get license stuff
