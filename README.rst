@@ -5,9 +5,6 @@ palal
 .. image:: https://badge.fury.io/py/palal.png
     :target: http://badge.fury.io/py/palal
 
-.. image:: https://pypip.in/d/palal/badge.png
-        :target: https://pypi.python.org/pypi/palal
-
 Pick a license, any license. 
 
 Introduction
