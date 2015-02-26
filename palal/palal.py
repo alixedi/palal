@@ -2,9 +2,10 @@ import os
 import yaml
 
 
-DATA = '_data'
-RULES = 'rules.yml'
-LICENSES = '_licenses'
+DIR = os.path.dirname(os.path.realpath(__file__))
+DATA = os.path.join(DIR, '_data')
+RULES = os.path.join(DATA, 'rules.yml')
+LICENSES = os.path.join(DIR, '_licenses')
 YAML_SEP = '---'
 
 
@@ -60,11 +61,11 @@ def get_choice(rule):
     return get_choice(rule)
 
 
-def get_choice_vector(rules):
+def get_choice_vector(rule):
     """Ask questions get choices."""
     text = 'What should be %s by your license?' % rule 
     print2(text)
-    return dict(map(get_choice, rules))
+    return dict(map(get_choice, rule))
 
 
 def get_license_vector(lic):
@@ -88,7 +89,7 @@ def vector_distance(v, _v):
     return dist
 
 
-if __name__ == "__main__":
+def main():
     # load everything
     lics = load_licenses()
     rules = load_rules()
@@ -121,3 +122,6 @@ if __name__ == "__main__":
         print1(data['description'])
         print1(data['how'])
         print1(data['source']) if 'source' in data else print1('No source.')
+
+if __name__ == '__main__':
+    main()
