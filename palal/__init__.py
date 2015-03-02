@@ -1,3 +1,4 @@
+import palal
+
 def main():
-    import palal
     palal.main()

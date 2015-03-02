@@ -1,6 +1,9 @@
 import os
 import yaml
 
+import sys
+if sys.version[0]=="3": raw_input=input
+
 
 DIR = os.path.dirname(os.path.realpath(__file__))
 DATA = os.path.join(DIR, '_data')
