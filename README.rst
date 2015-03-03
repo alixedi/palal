@@ -18,6 +18,13 @@ I have used the data from `Choosealicense.com <http://choosealicense.com>`_ but 
 
 2. Unlike `Choosealicense.com <http://choosealicense.com>`_, *palal* is interactive. It will ask you a few questions and returns the top 3 licenses that match your criteria.
 
+Installation
+------------
+
+Simple. ::
+
+    $ pip install palal
+
 Usage
 -----
 
