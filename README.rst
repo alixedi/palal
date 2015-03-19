@@ -5,18 +5,21 @@ palal
 .. image:: https://badge.fury.io/py/palal.png
     :target: http://badge.fury.io/py/palal
 
+.. image:: https://travis-ci.org/alixedi/palal.svg?branch=master
+    :target: https://travis-ci.org/alixedi/palal
+
 Pick a license, any license. 
 
 Introduction
 ------------
 
-This is my take on `GitHub's <http://github.com>`_ `Choosealicense.com <http://choosealicense.com>`_. 
+Picking an open-source license can be confusing for seasoned developers let along noobs. There are too many choices to begin with. On top of that, there is the vocabulary that reads like English without making any sense.
 
-I have used the data from `Choosealicense.com <http://choosealicense.com>`_ but the implementation has 2 key differences:
+The situation is unacceptable and it hurts FOSS. 
 
-1. *Palal* is a CLI utility.
+Palal aims to resolve that. It is a simple CLI utility that asks the user a series of questions In-Plain-English and returns the best possible FOSS license for his/her project.
 
-2. Unlike `Choosealicense.com <http://choosealicense.com>`_, *palal* is interactive. It will ask you a few questions and returns the top 3 licenses that match your criteria.
+Palal is inspired by the choosealicense.com and it uses the same license meta-data. However, while choosealicense.com displays the meta-data for the given license, Palal returns the license for the given meta-data.
 
 Installation
 ------------
