@@ -98,4 +98,5 @@ setup(
             'palal=palal:main',
         ],
     },
+    test_suite='tests',
 )

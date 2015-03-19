@@ -1,6 +1,6 @@
 import unittest
 
-import sample
+import palal
 
 
 class TestSimple(unittest.TestCase):
