@@ -2,13 +2,13 @@
 palal
 ======
 
+Pick a license, any license. 
+
 .. image:: https://badge.fury.io/py/palal.png
     :target: http://badge.fury.io/py/palal
 
 .. image:: https://travis-ci.org/alixedi/palal.svg?branch=master
     :target: https://travis-ci.org/alixedi/palal
-
-Pick a license, any license. 
 
 Introduction
 ------------
