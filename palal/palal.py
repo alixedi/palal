@@ -31,14 +31,11 @@
 """
     
 import os
+import sys
 import yaml
 import argparse
 
-
-import sys
-if sys.version[0]=="3": raw_input=input
-
-
+# Constants
 DIR = os.path.dirname(os.path.realpath(__file__))
 DATA = os.path.join(DIR, '_data')
 RULES = os.path.join(DATA, 'rules.yml')
@@ -48,16 +45,17 @@ YAML_SEP = '---'
 _desc = 'Answer a few questions to get the best FOSS license for your project.'
 parser = argparse.ArgumentParser(description=_desc)
 
-# Prettyprint utilities
-def print1(s):
-    print('')
-    print(s)
+# Prettyprints
+def printh2(s):
+    print('\n' + s)
 
-def print2(s):
-    print('')
-    print(s)
-    print('')
+def printh1(s):
+    print('\n' + s + '\n')
 
+# Wrapper for raw_input
+def uinput(p):
+    _v = sys.version[0]
+    return input(p) if _v is '3' else raw_input(p)
 
 # Utility functions
 def load_rules():
@@ -92,11 +90,11 @@ def get_choice(rule):
     tag = rule['tag']
     label = rule['label']
     description = rule['description']
-    ch = raw_input('%s (%s) [1-5] > ' % (label, description))
+    ch = uinput('%s (%s) [1-5] > ' % (label, description))
     if ch in ['1', '2', '3', '4', '5']:
         return tag, ch
 
-    print1('Please enter a number between 1 and 5!')
+    printh2('Please enter a number between 1 and 5!')
     return get_choice(rule)
 
 
@@ -142,7 +140,7 @@ def main():
     # get user choices
     for rule in rules:
         text = 'What should be %s by your license?' % rule 
-        print2(text)
+        printh1(text)
         ch_vectors[rule] = get_choice_vector(rules[rule])
 
     # get license stuff
@@ -158,14 +156,14 @@ def main():
     sdists = sorted(dists, key=lambda x: x[1])
 
     # print results
-    print1('According to the given criteria, top 3 FOSS licenses are: ')
+    printh2('According to the given criteria, top 3 FOSS licenses are: ')
     for i, sd in enumerate(sdists[:3]):
         lic, dist = sd
         data, txt = lics[lic]
-        print1('%d) %s [dist=%s]' % (i+1, dget(data, 'title'), d))
-        print1(dget(data, 'description'))
-        print1(dget(data, 'how'))
-        print1(dget(data, 'source'))
+        printh2('%d) %s [dist=%s]' % (i+1, dget(data, 'title'), d))
+        printh2(dget(data, 'description'))
+        printh2(dget(data, 'how'))
+        printh2(dget(data, 'source'))
 
 if __name__ == '__main__':
     main()
