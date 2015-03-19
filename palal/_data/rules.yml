@@ -45,8 +45,8 @@ forbidden:
 - description: Software is provided without warranty and the software author/license owner cannot be held liable for damages.
   label: Hold Liable
   tag: no-liability
-- description: You may not grant a sublicense to modify and distribute this software to third parties not included in the license.
-  label: Sublicensing
+- description: You must grant a sublicense to modify and distribute this software to third parties not included in the license.
+  label: No Sublicensing
   tag: no-sublicense
 - description: This software may not be modified.
   label: Modification
