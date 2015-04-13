@@ -65,10 +65,10 @@ def main():
     # sort distances
     sdists = sorted(dists, key=lambda x: x[1])
     # print results
-    print 'According to the given criteria, top 3 FOSS licenses are: '
+    print('According to the given criteria, top 3 FOSS licenses are:')
     for i, sd in enumerate(sdists[:3]):
         lic, dist = sd
-        print '(%d) %s' % (i+1, lic.meta['title'])
+        print('%d: %s' % (i+1, lic.meta['title']))
 
 if __name__ == '__main__':
     main()
