@@ -32,8 +32,8 @@
     
 import argparse
 
-from license import License, license_loader
-from survey import Survey, survey_loader
+from .license import License, license_loader
+from .survey import Survey, survey_loader
 
 _desc = 'Answer a few questions to get the best FOSS license for your project.'
 parser = argparse.ArgumentParser(description=_desc)
